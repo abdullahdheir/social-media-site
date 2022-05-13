@@ -9,6 +9,8 @@ include 'conn.php';
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- bootstrap 4.3.1 -->
   <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+  <!-- bootstrap icon 1.8 -->
+  <link rel="stylesheet" href="include/library/bootstrap-icons/bootstrap-icons.css">
   <!-- styles -->
   <link rel="stylesheet" href="css/styles.min.css">
   <!-- favicon -->
@@ -16,7 +18,6 @@ include 'conn.php';
   <title>Vikinger | login </title>
 </head>
 <body>
-
   <!-- LANDING -->
   <div class="landing">
     <!-- LANDING DECORATION -->
@@ -82,10 +83,11 @@ include 'conn.php';
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="login-username"> Email</label>
+                <label for="login-email"> Email</label>
                 <input type="text" id="login-email" name="login_email">
               </div>
               <!-- /FORM INPUT -->
+                <div class="text-danger" style="display:none;" id="email-error"></div>
             </div>
             <!-- /FORM ITEM -->
           </div>
@@ -99,8 +101,10 @@ include 'conn.php';
               <div class="form-input">
                 <label for="login-password">Password</label>
                 <input type="password" id="login-password" name="login_password">
+                  <i class="bi bi-eye-slash" style="color:#fff; cursor:pointer;position: absolute; right: 15px;top: 15px;" id="togglePassword"></i>
               </div>
               <!-- /FORM INPUT -->
+                <div class="text-danger" style="display:none;" id="password-error"></div>
             </div>
             <!-- /FORM ITEM -->
           </div>
@@ -215,7 +219,7 @@ include 'conn.php';
         <!-- FORM -->
         <form class="form" id="register-form" method="post">
           <!-- FORM ROW -->
-          <div class="form-row">
+          <div class="form-row row">
             <!-- FORM ITEM -->
             <div class="form-item col-6">
               <!-- FORM INPUT -->
@@ -224,6 +228,7 @@ include 'conn.php';
                 <input type="text" id="register-fname" name="register_fname">
               </div>
               <!-- /FORM INPUT -->
+                <div class="text-danger" style="display:none; font-size:.7em;" id="fname-error"></div>
             </div>
             <!-- /FORM ITEM --> 
             <!-- FORM ITEM -->
@@ -234,6 +239,7 @@ include 'conn.php';
                 <input type="text" id="register-lname" name="register_lname">
               </div>
               <!-- /FORM INPUT -->
+                <div class="text-danger" style="display:none; font-size:.7em;" id="lname-error"></div>
             </div>
             <!-- /FORM ITEM -->
           </div>
@@ -249,6 +255,7 @@ include 'conn.php';
                 <input type="text" id="register-email" name="register_email">
               </div>
               <!-- /FORM INPUT -->
+                <div class="text-danger" style="display:none; " id="register-email-error"></div>
             </div>
             <!-- /FORM ITEM -->
           </div>
@@ -261,7 +268,9 @@ include 'conn.php';
               <!-- FORM INPUT -->
               <div class="form-input">
                 <label for="register-password">Password</label>
-                <input type="password" id="register-password" name="register_password">
+                <input type="password" id="register-password" class="password" name="register_password">
+                  <i class="bi bi-eye-slash" style="color:#fff; cursor:pointer;position: absolute; right: 15px;top: 15px;" id="toggleRegisterPassword"></i>
+                  <small class="help-block"  id="password-text"></small>
               </div>
               <!-- /FORM INPUT -->
             </div>
@@ -276,9 +285,11 @@ include 'conn.php';
               <!-- FORM INPUT -->
               <div class="form-input">
                 <label for="register-password-repeat">Repeat Password</label>
-                <input type="password" id="register-password-repeat" name="register_password_repeat">
+                <input type="password" class="password" id="register-password-repeat" name="register_password_repeat">
+                  <i class="bi bi-eye-slash" style="color:#fff; cursor:pointer;position: absolute; right: 15px;top: 15px;" id="toggleRegisterRePassword"></i>
               </div>
               <!-- /FORM INPUT -->
+                <div class="text-danger" style="display:none;" id="register-password-error"></div>
             </div>
             <!-- /FORM ITEM -->
           </div>
