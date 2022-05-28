@@ -2002,7 +2002,7 @@
               <!-- /ACTION ITEM -->
 
               <!-- DROPDOWN NAVIGATION -->
-              <div class="dropdown-navigation header-settings-dropdown"  data-simplebar style="overflow:auto;height: calc(100vh - 64px);">
+              <div class="dropdown-navigation header-settings-dropdown" data-simplebar style="overflow:auto;height: calc(100vh - 64px);">
                   <!-- DROPDOWN NAVIGATION HEADER -->
                   <div class="dropdown-navigation-header">
                       <!-- USER STATUS -->
@@ -2064,11 +2064,11 @@
                           <!-- /USER STATUS AVATAR -->
 
                           <!-- USER STATUS TITLE -->
-                          <p class="user-status-title"><span class="bold">Hi Marina!</span></p>
+                          <p class="user-status-title"><span class="bold">Hi <?= $_SESSION['name'] ?></span></p>
                           <!-- /USER STATUS TITLE -->
 
                           <!-- USER STATUS TEXT -->
-                          <p class="user-status-text small"><a href="profile-timeline.php">@marinavalentine</a></p>
+                          <p class="user-status-text small"><a href="profile-timeline.php">@<?= $_SESSION['username'] ?></a></p>
                           <!-- /USER STATUS TEXT -->
                       </div>
                       <!-- /USER STATUS -->
@@ -2148,11 +2148,13 @@
                   <!-- /DROPDOWN NAVIGATION LINK -->
 
                   <!-- DROPDOWN NAVIGATION BUTTON -->
-                  <p id="logout-btn" class="dropdown-navigation-button button small secondary d-flex justify-content-center align-items-center">Logout  </p>
+                  <p id="logout-btn" class="dropdown-navigation-button button small secondary d-flex justify-content-center align-items-center">Logout </p>
                   <!-- /DROPDOWN NAVIGATION BUTTON -->
-                  
-                 <div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 302px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div>
-                  
+
+                  <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                      <div class="simplebar-scrollbar" style="height: 302px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+                  </div>
+
               </div>
               <!-- /DROPDOWN NAVIGATION -->
           </div>
@@ -2161,5 +2163,5 @@
       <!-- /HEADER ACTIONS -->
   </header>
   <!-- /HEADER -->
-<?php
-include 'navMobile.php';
+  <?php
+    include 'navMobile.php';

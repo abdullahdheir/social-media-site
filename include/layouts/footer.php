@@ -1,10 +1,10 @@
-<?php 
+<?php
 $js = 'js/';
 ?>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
-<!-- JQuery -->
-<script src="<?= $js ?>jquery/jquery.min.js"></script>
+
+<!-- bootsrap bundle -->
+<script src="<?= $js ?>vendor/bootstrap.bundle.min.js"></script>
 <!-- app -->
 <script src="<?= $js ?>utils/app.js"></script>
 <!-- page loader -->
@@ -40,10 +40,14 @@ $js = 'js/';
 <!-- Ajax -->
 <script src="<?= $js ?>ajax/main.js"></script>
 
+<?php if (isset($loginJs)) : ?>
+    <script src="js/ajax/login.js"></script>
+<?php endif ?>
+
 </body>
 
 </html>
 
 <?php
-    
-    ob_end_flush();
+
+ob_end_flush();

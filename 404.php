@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,6 +12,7 @@
   <link rel="icon" href="img/favicon.ico">
   <title>Vikinger | 404</title>
 </head>
+
 <body>
 
   <!-- ERROR SECTION -->
@@ -20,7 +22,7 @@
     <!-- /ERROR SECTION TITLE -->
 
     <!-- ERROR SECTION INFO -->
-    <div class="error-section-info">
+    <div class="error-section-info" style="top: 300px;">
       <!-- ERROR SECTION SUBTITLE -->
       <p class="error-section-subtitle">Oops!!...</p>
       <!-- /ERROR SECTION SUBTITLE -->
@@ -34,12 +36,13 @@
       <!-- /ERROR SECTION TEXT -->
 
       <!-- BUTTON -->
-      <a class="button medium primary" href="profile-timeline.php">Go Back</a>
+      <a class="button medium primary" href="" onclick="event.preventDefault(); history.back();">Go Back</a>
       <!-- /BUTTON -->
     </div>
     <!-- /ERROR SECTION INFO -->
   </div>
   <!-- /ERROR SECTION -->
-  
+
 </body>
+
 </html>

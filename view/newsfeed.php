@@ -1,6 +1,10 @@
-<?php 
-$title = 'Newsfeed';
-include 'init.php'; ?>
+<?php
+include 'init.php';
+if (!isset($_SESSION['id'])) {
+  header('location:' . $route . 'login');
+  exit();
+}
+?>
 
 <!-- CONTENT GRID -->
 <div class="content-grid">
@@ -8915,5 +8919,3 @@ include 'init.php'; ?>
   <!-- /POPUP PICTURE IMAGE WRAP -->
 </div>
 <!-- /POPUP PICTURE -->
-<?php
-include $layouts .'footer.php';

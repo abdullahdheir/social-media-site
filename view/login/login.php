@@ -1,9 +1,12 @@
 <?php
-include 'conn.php';
+if (isset($_SESSION['id'])) {
+  header("location: $route");
+  exit();
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +20,7 @@ include 'conn.php';
   <link rel="icon" href="img/favicon.ico">
   <title>Vikinger | login </title>
 </head>
+
 <body>
   <!-- LANDING -->
   <div class="landing">
@@ -73,10 +77,10 @@ include 'conn.php';
         <!-- FORM BOX TITLE -->
         <h2 class="form-box-title">Account Login</h2>
         <!-- /FORM BOX TITLE -->
-    
+
         <!-- FORM -->
         <form class="form" id="login-form" method="post">
-            <div id="ajax"></div>
+          <div id="ajax"></div>
           <!-- FORM ROW -->
           <div class="form-row">
             <!-- FORM ITEM -->
@@ -87,12 +91,12 @@ include 'conn.php';
                 <input type="text" id="login-email" name="login_email">
               </div>
               <!-- /FORM INPUT -->
-                <div class="text-danger" style="display:none;" id="email-error"></div>
+              <div class="text-danger" style="display:none;" id="email-error"></div>
             </div>
             <!-- /FORM ITEM -->
           </div>
           <!-- /FORM ROW -->
-    
+
           <!-- FORM ROW -->
           <div class="form-row">
             <!-- FORM ITEM -->
@@ -101,15 +105,15 @@ include 'conn.php';
               <div class="form-input">
                 <label for="login-password">Password</label>
                 <input type="password" id="login-password" name="login_password">
-                  <i class="bi bi-eye-slash" style="color:#fff; cursor:pointer;position: absolute; right: 15px;top: 15px;" id="togglePassword"></i>
+                <i class="bi bi-eye-slash" style="color:#fff; cursor:pointer;position: absolute; right: 15px;top: 15px;" id="togglePassword"></i>
               </div>
               <!-- /FORM INPUT -->
-                <div class="text-danger" style="display:none;" id="password-error"></div>
+              <div class="text-danger" style="display:none;" id="password-error"></div>
             </div>
             <!-- /FORM ITEM -->
           </div>
           <!-- /FORM ROW -->
-    
+
           <!-- FORM ROW -->
           <div class="form-row space-between">
             <!-- FORM ITEM -->
@@ -131,7 +135,7 @@ include 'conn.php';
               <!-- /CHECKBOX WRAP -->
             </div>
             <!-- /FORM ITEM -->
-    
+
             <!-- FORM ITEM -->
             <div class="form-item">
               <!-- FORM LINK -->
@@ -141,7 +145,7 @@ include 'conn.php';
             <!-- /FORM ITEM -->
           </div>
           <!-- /FORM ROW -->
-    
+
           <!-- FORM ROW -->
           <div class="form-row">
             <!-- FORM ITEM -->
@@ -155,11 +159,11 @@ include 'conn.php';
           <!-- /FORM ROW -->
         </form>
         <!-- /FORM -->
-    
+
         <!-- LINED TEXT -->
         <p class="lined-text">Login with your Social Account</p>
         <!-- /LINED TEXT -->
-    
+
         <!-- SOCIAL LINKS -->
         <div class="social-links">
           <!-- SOCIAL LINK -->
@@ -171,7 +175,7 @@ include 'conn.php';
             <!-- /ICON FACEBOOK -->
           </a>
           <!-- /SOCIAL LINK -->
-    
+
           <!-- SOCIAL LINK -->
           <a class="social-link twitter" href="#">
             <!-- ICON TWITTER -->
@@ -181,7 +185,7 @@ include 'conn.php';
             <!-- /ICON TWITTER -->
           </a>
           <!-- /SOCIAL LINK -->
-    
+
           <!-- SOCIAL LINK -->
           <a class="social-link twitch" href="#">
             <!-- ICON TWITCH -->
@@ -191,7 +195,7 @@ include 'conn.php';
             <!-- /ICON TWITCH -->
           </a>
           <!-- /SOCIAL LINK -->
-    
+
           <!-- SOCIAL LINK -->
           <a class="social-link youtube" href="#">
             <!-- ICON YOUTUBE -->
@@ -205,7 +209,7 @@ include 'conn.php';
         <!-- /SOCIAL LINKS -->
       </div>
       <!-- /FORM BOX -->
-    
+
       <!-- FORM BOX -->
       <div class="form-box login-register-form-element">
         <!-- FORM BOX DECORATION -->
@@ -215,9 +219,10 @@ include 'conn.php';
         <!-- FORM BOX TITLE -->
         <h2 class="form-box-title">Create your Account!</h2>
         <!-- /FORM BOX TITLE -->
-    
+
         <!-- FORM -->
         <form class="form" id="register-form" method="post">
+          <div id="register-ajax"></div>
           <!-- FORM ROW -->
           <div class="form-row row">
             <!-- FORM ITEM -->
@@ -228,9 +233,9 @@ include 'conn.php';
                 <input type="text" id="register-fname" name="register_fname">
               </div>
               <!-- /FORM INPUT -->
-                <div class="text-danger" style="display:none; font-size:.7em;" id="fname-error"></div>
+              <div class="text-danger" style="display:none; font-size:.7em;" id="fname-error"></div>
             </div>
-            <!-- /FORM ITEM --> 
+            <!-- /FORM ITEM -->
             <!-- FORM ITEM -->
             <div class="form-item col-6">
               <!-- FORM INPUT -->
@@ -239,12 +244,12 @@ include 'conn.php';
                 <input type="text" id="register-lname" name="register_lname">
               </div>
               <!-- /FORM INPUT -->
-                <div class="text-danger" style="display:none; font-size:.7em;" id="lname-error"></div>
+              <div class="text-danger" style="display:none; font-size:.7em;" id="lname-error"></div>
             </div>
             <!-- /FORM ITEM -->
           </div>
           <!-- /FORM ROW -->
-            
+
           <!-- FORM ROW -->
           <div class="form-row">
             <!-- FORM ITEM -->
@@ -255,12 +260,12 @@ include 'conn.php';
                 <input type="text" id="register-email" name="register_email">
               </div>
               <!-- /FORM INPUT -->
-                <div class="text-danger" style="display:none; " id="register-email-error"></div>
+              <div class="text-danger" style="display:none; " id="register-email-error"></div>
             </div>
             <!-- /FORM ITEM -->
           </div>
           <!-- /FORM ROW -->
-    
+
           <!-- FORM ROW -->
           <div class="form-row">
             <!-- FORM ITEM -->
@@ -269,15 +274,15 @@ include 'conn.php';
               <div class="form-input">
                 <label for="register-password">Password</label>
                 <input type="password" id="register-password" class="password" name="register_password">
-                  <i class="bi bi-eye-slash" style="color:#fff; cursor:pointer;position: absolute; right: 15px;top: 15px;" id="toggleRegisterPassword"></i>
-                  <small class="help-block"  id="password-text"></small>
+                <i class="bi bi-eye-slash" style="color:#fff; cursor:pointer;position: absolute; right: 15px;top: 15px;" id="toggleRegisterPassword"></i>
+                <small class="help-block" id="password-text"></small>
               </div>
               <!-- /FORM INPUT -->
             </div>
             <!-- /FORM ITEM -->
           </div>
           <!-- /FORM ROW -->
-    
+
           <!-- FORM ROW -->
           <div class="form-row">
             <!-- FORM ITEM -->
@@ -286,15 +291,15 @@ include 'conn.php';
               <div class="form-input">
                 <label for="register-password-repeat">Repeat Password</label>
                 <input type="password" class="password" id="register-password-repeat" name="register_password_repeat">
-                  <i class="bi bi-eye-slash" style="color:#fff; cursor:pointer;position: absolute; right: 15px;top: 15px;" id="toggleRegisterRePassword"></i>
+                <i class="bi bi-eye-slash" style="color:#fff; cursor:pointer;position: absolute; right: 15px;top: 15px;" id="toggleRegisterRePassword"></i>
               </div>
               <!-- /FORM INPUT -->
-                <div class="text-danger" style="display:none;" id="register-password-error"></div>
+              <div class="text-danger" style="display:none;" id="register-password-error"></div>
             </div>
             <!-- /FORM ITEM -->
           </div>
           <!-- /FORM ROW -->
-    
+
           <!-- FORM ROW -->
           <div class="form-row">
             <!-- FORM ITEM -->
@@ -318,7 +323,7 @@ include 'conn.php';
             <!-- /FORM ITEM -->
           </div>
           <!-- /FORM ROW -->
-    
+
           <!-- FORM ROW -->
           <div class="form-row">
             <!-- FORM ITEM -->
@@ -330,10 +335,10 @@ include 'conn.php';
             <!-- /FORM ITEM -->
           </div>
           <!-- /FORM ROW -->
-              <div id="ajax"></div>
+          <div id="ajax"></div>
         </form>
         <!-- /FORM -->
-    
+
         <!-- FORM TEXT -->
         <p class="form-text">You'll receive a confirmation email in your inbox with a link to activate your account. If you have any problems, <a href="#">contact us</a>!</p>
         <!-- /FORM TEXT -->
@@ -343,19 +348,19 @@ include 'conn.php';
     <!-- /LANDING FORM -->
   </div>
   <!-- /LANDING -->
-    
-<!-- JQuery -->
-<script src="js/jquery/jquery.min.js"></script>
-<!-- app -->
-<script src="js/utils/app.js"></script>
-<!-- XM_Plugins -->
-<script src="js/vendor/xm_plugins.min.js"></script>
-<!-- form.utils -->
-<script src="js/form/form.utils.js"></script>
-<!-- landing.tabs -->
-<script src="js/landing/landing.tabs.js"></script>
-<!-- SVG icons -->
-<script src="js/utils/svg-loader.js"></script>
-<script src="js/ajax/login.js"></script>
+  <!-- JQuery -->
+  <script src="js/jquery/jquery.min.js"></script>
+  <!-- app -->
+  <script src="js/utils/app.js"></script>
+  <!-- XM_Plugins -->
+  <script src="js/vendor/xm_plugins.min.js"></script>
+  <!-- form.utils -->
+  <script src="js/form/form.utils.js"></script>
+  <!-- landing.tabs -->
+  <script src="js/landing/landing.tabs.js"></script>
+  <!-- SVG icons -->
+  <script src="js/utils/svg-loader.js"></script>
+  <script src="js/ajax/login.js"></script>
 </body>
+
 </html>
