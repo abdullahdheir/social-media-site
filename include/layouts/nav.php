@@ -2080,7 +2080,7 @@
                   <!-- /DROPDOWN NAVIGATION CATEGORY -->
 
                   <!-- DROPDOWN NAVIGATION LINK -->
-                  <a class="dropdown-navigation-link" href="hub-profile-info.php">Profile Info</a>
+                  <a class="dropdown-navigation-link" href="<?= $route_myProfile ?>">Profile Info</a>
                   <!-- /DROPDOWN NAVIGATION LINK -->
 
                   <!-- DROPDOWN NAVIGATION LINK -->

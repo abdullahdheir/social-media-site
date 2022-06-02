@@ -139,7 +139,7 @@ if (isset($_SESSION['id'])) {
             <!-- FORM ITEM -->
             <div class="form-item">
               <!-- FORM LINK -->
-              <a class="form-link" href="#">Forgot Password?</a>
+              <a class="form-link" href="<?= $route_forgetPassword  ?>">Forgot Password?</a>
               <!-- /FORM LINK -->
             </div>
             <!-- /FORM ITEM -->
