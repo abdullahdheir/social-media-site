@@ -60,7 +60,7 @@ $(function () {
                 success: function (data) {
                     setTimeout(() => {
                         if (data == 'success') {
-                            location.href = '/'
+                            location.href = '/social-media-site/'
                         } else {
                             $('#ajax').html(`<div class="alert alert-danger">${data}</div>`)
                         }

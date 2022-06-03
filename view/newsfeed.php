@@ -1,7 +1,7 @@
 <?php
 include 'init.php';
 if (!isset($_SESSION['id'])) {
-  header('location:' . $route . 'login');
+  header('location:' . $route_login);
   exit();
 }
 ?>
